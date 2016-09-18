@@ -1,0 +1,25 @@
+{
+  "name": "it-consultis-front-end-test",
+  "description": "front-end test",
+  "main": "gulpfile.js",
+  "authors": [
+    "Nhut Le"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "front",
+    "end",
+    "test"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
