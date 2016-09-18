@@ -1,42 +1,51 @@
 [
-	{
+	{ "id": "photo1",
 		"caption": "photo 1",
-		"src": "assets/images/download (1).jpg"
+		"src": "assets/images/photo1.jpg"
 	},
 	{
+    "id": "photo2",
 		"caption": "photo 2",
-		"src": "assets/images/download (2).jpg"
+		"src": "assets/images/photo2.jpg"
 	},
 	{
+    "id": "photo3",
 		"caption": "photo 3",
-		"src": "assets/images/download (3).jpg"
+		"src": "assets/images/photo3.jpg"
 	},
 	{
+    "id": "photo4",
 		"caption": "photo 4",
-		"src": "assets/images/download (4).jpg"
+		"src": "assets/images/photo4.jpg"
 	},
 	{
+    "id": "photo5",
 		"caption": "photo 5",
-		"src": "assets/images/download (5).jpg"
+		"src": "assets/images/photo5.jpg"
 	},
 	{
+    "id": "photo6",
 		"caption": "photo 6",
-		"src": "assets/images/download (6).jpg"
+		"src": "assets/images/photo6.jpg"
 	},
 	{
+    "id": "photo7",
 		"caption": "photo 7",
-		"src": "assets/images/download (7).jpg"
+		"src": "assets/images/photo7.jpg"
 	},
 	{
+    "id": "photo8",
 		"caption": "photo 8",
-		"src": "assets/images/download (8).jpg"
+		"src": "assets/images/photo8.jpg"
 	},
 	{
+    "id": "photo9",
 		"caption": "photo 9",
-		"src": "assets/images/download (9).jpg"
+		"src": "assets/images/photo9.jpg"
 	},
 	{
+    "id": "photo10",
 		"caption": "photo 10",
-		"src": "assets/images/download (10).jpg"
+		"src": "assets/images/photo10.jpg"
 	}
 ]
