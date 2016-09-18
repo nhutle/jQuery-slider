@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Front-end Test</title>
+
+  <!-- Dependencies -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles/main.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <ul id="photo_list" class="photo-list">
+  </ul>
+  <div id="gallerry_modal" class="gallerry-modal">
+    <div class="gallery-dialog">
+      <div class="galerry-content">
+        <div class="gallery-header">
+          <button id="slide_close" class="close" type="button">
+            <span aria-hidden="true">&time;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 id="photo_title"></h4>
+        </div>
+        <div class="gallery-body">
+          <div id="previous_nav" class="photo-nav">
+            <a href="javascript:void(0);">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+          </div>
+          <div class="slide-wrap">
+            <img src="" alt="" id="photo_show">
+          </div>
+          <div id="next_nav" class="photo-nav">
+            <a href="javascript:void(0);">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+        <div class="gallery-footer">
+          <ul id="photo_list_queue" class="photo-list-queue"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dependencies -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Main JS-->
+  <script src="javascripts/main.min.js"></script>
+</body>
+
+</html>
