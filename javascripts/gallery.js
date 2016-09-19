@@ -82,12 +82,3 @@ var Gallery = function() {
     $indicator.find('li[data-index=' + curSlide + ']').addClass('active');
   });
 };
-
-! function($) {
-  'use strict';
-
-  // waiting for document ready
-  $(function() {
-    var gallery = new Gallery();
-  });
-}(jQuery);
