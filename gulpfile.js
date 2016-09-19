@@ -51,7 +51,7 @@ gulp.task('sass-build', function() {
 // Concatenate and Minify JS
 gulp.task('script', function() {
   return gulp.src([
-      'javascripts/main.js',
+      'javascripts/**/*.js',
       '!javascripts/main.min.js'
     ])
     .pipe(concat('main.min.js'))
@@ -60,7 +60,7 @@ gulp.task('script', function() {
 
 gulp.task('script-build', function() {
   return gulp.src([
-      'javascripts/main.js',
+      'javascripts/**/*.js',
       '!javascripts/main.min.js'
     ])
     .pipe(concat('main.js'))
