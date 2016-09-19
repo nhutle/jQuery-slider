@@ -6,9 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="assets/images/favicon.ico">
-  <title>Front-end Test</title>
+  <title>Front-end</title>
   <!-- Dependencies -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles/main.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -19,61 +20,96 @@
 </head>
 
 <body>
-  <ul id="photo_list" class="photo-list list-unstyled">
-    <li class="pull-left">
-      <a href="javascript:void(0);">
-        <img src="assets/images/photo1.jpg" alt="" class="img-responsive">
-      </a>
-    </li>
-    <li class="pull-left">
-      <a href="javascript:void(0);">
-        <img src="assets/images/photo2.jpg" alt="" class="img-responsive">
-      </a>
-    </li>
-    <li class="pull-left">
-      <a href="javascript:void(0);">
-        <img src="assets/images/photo3.jpg" alt="" class="img-responsive">
-      </a>
-    </li>
-    <li class="pull-left">
-      <a href="javascript:void(0);">
-        <img src="assets/images/photo4.jpg" alt="" class="img-responsive">
-      </a>
-    </li>
-    <li class="pull-left">
-      <a href="javascript:void(0);">
-        <img src="assets/images/photo5.jpg" alt="" class="img-responsive">
-      </a>
-    </li>
-  </ul>
-  <div id="gallery_modal" class="gallery-modal">
-    <div class="gallery-dialog">
-      <div class="gallery-content">
-        <div class="gallery-header">
-          <button id="slide_close" class="close" type="button">
-            <span aria-hidden="true">&time;</span>
-            <span class="sr-only">Close</span>
-          </button>
-          <h4 id="photo_title"></h4>
-        </div>
-        <div class="gallery-body">
-          <div id="previous_nav" class="photo-nav">
-            <a href="javascript:void(0);">
-              <span class="glyphicon glyphicon-chevron-left"></span>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 gallery" id="gallery">
+        <ul class="photo-list">
+          <li>
+            1
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo4.jpg" alt="photo 5">
             </a>
-          </div>
-          <div class="slide-wrap">
-            <img class="img-responsive" src="assets/images/photo1.jpg" alt="" id="photo_show">
-          </div>
-          <div id="next_nav" class="photo-nav">
-            <a href="javascript:void(0);">
-              <span class="glyphicon glyphicon-chevron-right"></span>
+          </li>
+          <li>
+            2
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo5.jpg" alt="photo 5">
             </a>
-          </div>
-        </div>
+          </li>
+          <li>
+            3
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo3.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            4
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo2.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            5
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo1.jpg" alt="photo 5">
+            </a>
+          </li>
+        </ul>
+        <a href="javascript:void(0);" id="previous_nav" class="photo-nav">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+        <a href="javascript:void(0);" id="next_nav" class="photo-nav">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <ol class="indicator">
+          <li class="active" data-index="0"></li>
+          <li data-index="1"></li>
+          <li data-index="2"></li>
+          <li data-index="3"></li>
+          <li data-index="4"></li>
+        </ol>
       </div>
     </div>
   </div>
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 gallery" id="gallery_">
+        <ul class="list-unstyled photo-list" id="photo_list">
+          <li>
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo6.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo7.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo8.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo9.jpg" alt="photo 5">
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-id="photo5" data-index="4">
+              <img src="assets/images/photo10.jpg" alt="photo 5">
+            </a>
+          </li>
+        </ul>
+        <a href="javascript:void(0);" id="previous_nav" class="photo-nav">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </a>
+        <a href="javascript:void(0);" id="next_nav" class="photo-nav">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div> -->
   <!-- Dependencies -->
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
