@@ -2,9 +2,10 @@
   position: relative;
   min-height: 300px;
   padding: 0;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   overflow: hidden;
-  .photo-list {
+  ul {
     position: absolute;
     top: 0;
     left: 0;
@@ -23,7 +24,7 @@
       width: 100%;
     }
   }
-  .indicator {
+  ol {
     position: absolute;
     bottom: 0;
     right: 1%;
@@ -51,13 +52,13 @@
   font-size: 20px;
   color: #999;
   @include transform(translateY(-50%));
-  &:hover {
+  &:hover, &:active, &:visited {
     color: #FFF;
   }
-  &#next_nav {
+  &.next-nav {
     left: 90%;
   }
-  &#previous_nav {
+  &.previous-nav {
     left: 0;
   }
 }

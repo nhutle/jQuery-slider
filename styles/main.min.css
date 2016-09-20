@@ -2,30 +2,31 @@
   position: relative;
   min-height: 300px;
   padding: 0;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   overflow: hidden; }
-  .gallery .photo-list {
+  .gallery ul {
     position: absolute;
     top: 0;
     left: 0;
     margin-bottom: 0;
     padding-left: 0;
     list-style-type: none; }
-    .gallery .photo-list li {
+    .gallery ul li {
       float: left; }
-    .gallery .photo-list a {
+    .gallery ul a {
       display: block;
       height: 300px; }
-    .gallery .photo-list img {
+    .gallery ul img {
       height: 100%;
       width: 100%; }
-  .gallery .indicator {
+  .gallery ol {
     position: absolute;
     bottom: 0;
     right: 1%;
     margin-bottom: 0;
     padding-left: 0; }
-    .gallery .indicator li {
+    .gallery ol li {
       cursor: pointer;
       display: inline-block;
       width: 9px;
@@ -33,7 +34,7 @@
       background-color: #FFF;
       -webkit-border-radius: 50%;
       border-radius: 50%; }
-      .gallery .indicator li.active {
+      .gallery ol li.active {
         background-color: #999; }
 
 .photo-nav {
@@ -48,11 +49,11 @@
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%); }
-  .photo-nav:hover {
+  .photo-nav:hover, .photo-nav:active, .photo-nav:visited {
     color: #FFF; }
-  .photo-nav#next_nav {
+  .photo-nav.next-nav {
     left: 90%; }
-  .photo-nav#previous_nav {
+  .photo-nav.previous-nav {
     left: 0; }
 
 /*# sourceMappingURL=main.min.css.map */
