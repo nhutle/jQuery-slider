@@ -13,7 +13,7 @@
 
 2. Run the following command to run the project
 
-  ```gulp ```
+    ```gulp ```
 
 3. Open ```localhost:3000``` to see the result.
 
