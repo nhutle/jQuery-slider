@@ -3,7 +3,7 @@
 
   // waiting for document ready
   $(function() {
-    var $gallery = $('#gallery').gallery({
+    $('#gallery').gallery({
       type: 'scrolling'
     });
 

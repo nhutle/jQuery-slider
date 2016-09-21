@@ -1,31 +1,30 @@
-! function($, w) {
-  'use strict';
-
-  $.fn.gallery = function(options) {
-    var $window = $(w),
-      $gallery = $(this),
-      $photoList = $gallery.find('ul'),
-      $indicator = $gallery.find('ol.indicator'),
+/**
+ * init plugin
+ * @author: Nhut Le
+ */
+var Gallery = (function() {
+  function Gallery($gallery, $window, options) {
+    var $photoList = $gallery.find('ul'),
+      $indicator = $gallery.find('ol'),
       $nextNav = $gallery.find('a.next-nav'),
       $previousNav = $gallery.find('a.previous-nav'),
-      totalSlides = $photoList.find('li').length,
-      curSlide = 0,
-      galleryWidth,
-      intervalSession;
+      self = this;
+
+    this.totalSlides = $photoList.find('li').length;
+    this.curSlide = 0;
+    this.options = options;
 
     $indicator.find('li:eq(0)').addClass('active');
 
-    if (options.type === 'scrolling') {
+    if (this.options.type === 'scrolling') {
       var setGallerySize = function() {
-        galleryWidth = $gallery.width();
+        self.galleryWidth = $gallery.width();
 
         $photoList.find('li').each(function(index, element) {
-          var $this = $(element);
-
-          $this.width(galleryWidth);
+          $(element).width(self.galleryWidth);
         });
 
-        $photoList.width(galleryWidth * totalSlides);
+        $photoList.width(self.galleryWidth * self.totalSlides);
       };
 
       setGallerySize();
@@ -35,66 +34,86 @@
       });
     }
 
-    var updateSlider = function($element, type) {
-      // clear interval session
-      clearInterval(intervalSession);
-
-      if (options.type === 'fading') {
-        $photoList.find('li:eq(' + curSlide + ')').fadeOut();
-      }
-
-      $indicator.find('li:eq(' + curSlide + ')').removeClass('active');
-
-      if (type === 'next') {
-        curSlide++;
-
-        if (curSlide === totalSlides) {
-          curSlide = 0;
-        }
-      } else if (type === 'previous') {
-        curSlide--;
-
-        if (curSlide < 0) {
-          curSlide = totalSlides - 1;
-        }
-      } else {
-        curSlide = $element.index();
-      }
-
-      if (options.type === 'scrolling') {
-        $photoList.animate({
-          'left': (curSlide * -galleryWidth)
-        });
-      }
-
-      if (options.type === 'fading') {
-        $photoList.find('li:eq(' + curSlide + ')').fadeIn();
-      }
-
-      $indicator.find('li:eq(' + curSlide + ')').addClass('active');
-      // start interval session again
-      intervalSession = setInterval(runSlider, 5000);
-    };
-
-    var runSlider = function() {
-      updateSlider(null, 'next');
-    };
-
-    if (totalSlides) {
-      intervalSession = setInterval(runSlider, 5000);
-    }
+    this.intervalSession = setInterval(function() {
+      self.runSlider(null, 'next', $indicator, $photoList);
+    }, 5000);
 
     $nextNav.on('click', function() {
-      updateSlider(null, 'next');
+      self.updateSlider(null, 'next', $indicator, $photoList);
     });
 
     $previousNav.on('click', function() {
-      updateSlider(null, 'previous');
+      self.updateSlider(null, 'previous', $indicator, $photoList);
     });
 
     $indicator.find('li').on('click', function() {
-      updateSlider($(this), 'indicator');
+      self.updateSlider($(this), 'indicator', $indicator, $photoList);
     });
+  }
+
+  Gallery.prototype.updateSlider = function($element, type, $indicator, $photoList) {
+    var self = this;
+
+    // clear interval session
+    clearInterval(this.intervalSession);
+
+    if (this.options.type === 'fading') {
+      $photoList.find('li:eq(' + this.curSlide + ')').fadeOut();
+    }
+
+    $indicator.find('li:eq(' + this.curSlide + ')').removeClass('active');
+
+    if (type === 'next') {
+      this.curSlide++;
+
+      if (this.curSlide === this.totalSlides) {
+        this.curSlide = 0;
+      }
+    } else if (type === 'previous') {
+      this.curSlide--;
+
+      if (this.curSlide < 0) {
+        this.curSlide = this.totalSlides - 1;
+      }
+    } else {
+      this.curSlide = $element.index();
+    }
+
+    if (this.options.type === 'scrolling') {
+      $photoList.animate({
+        'left': (this.curSlide * -this.galleryWidth)
+      });
+    }
+
+    if (this.options.type === 'fading') {
+      $photoList.find('li:eq(' + this.curSlide + ')').fadeIn();
+    }
+
+    $indicator.find('li:eq(' + this.curSlide + ')').addClass('active');
+
+    // start interval session again
+    this.intervalSession = setInterval(function() {
+      self.runSlider(null, 'next', $indicator, $photoList);
+    }, 5000);
+  };
+
+  Gallery.prototype.runSlider = function($element, type, $indicator, $photoList) {
+    this.updateSlider(null, 'next', $indicator, $photoList);
+  };
+
+  return Gallery;
+})();
+
+
+/**
+ * attach plugin to jQuery
+ * @author: Nhut Le
+ */
+! function($, w) {
+  'use strict';
+
+  $.fn.gallery = function(options) {
+    new Gallery($(this), $(w), options);
 
     return this;
   };

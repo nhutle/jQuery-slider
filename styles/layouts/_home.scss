@@ -6,6 +6,7 @@
   margin-bottom: 20px;
   overflow: hidden;
   ul {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,6 +15,7 @@
     list-style-type: none;
     li {
       float: left;
+      width: 100%;
     }
     a {
       display: block;

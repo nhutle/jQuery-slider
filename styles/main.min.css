@@ -6,6 +6,7 @@
   margin-bottom: 20px;
   overflow: hidden; }
   .gallery ul {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +14,8 @@
     padding-left: 0;
     list-style-type: none; }
     .gallery ul li {
-      float: left; }
+      float: left;
+      width: 100%; }
     .gallery ul a {
       display: block;
       height: 300px; }
